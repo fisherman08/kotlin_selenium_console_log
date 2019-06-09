@@ -1,4 +1,5 @@
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeDriverService
 import org.openqa.selenium.chrome.ChromeOptions
 import java.util.logging.Level
 import org.openqa.selenium.remote.CapabilityType
@@ -22,10 +23,10 @@ fun main(args: Array<String>) {
 
     val driver = ChromeDriver(capabilities)
 
-    driver.get("https://********")
+    driver.get("https://***")
 
     driver.executeScript("console.log('hoge');")
-    val logs = driver.manage().logs().get("browser")
+    val logs = driver.manage().logs().get(LogType.BROWSER)
 
     logs.forEach { logEntry ->
         println(logEntry)
